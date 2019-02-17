@@ -1,0 +1,40 @@
+<Page>
+
+    <ActionBar title="Admin" class="action-bar"> </ActionBar>
+
+    <GridLayout columns="100, 100, 100" rows="50, 50, 50, 50, 50, 50, 150,50"
+        width="300" height="500" backgroundColor="lightgray">
+        <Label text="Game Type" row="0" col="0" marginLeft="10" marginTop="10"
+            fontSize="16" />
+
+        <TextField text="{{ objectiveName }}" hint="Objective Name" row="1"
+            col="0" colSpan="3" textWrap="true" marginLeft="10" marginRight="10"
+            fontSize="16" maxLength="20" />
+
+        <TextView editable="true" text="{{ objectiveDescription }}" hint="Objective description..."
+            row="2" col="0" rowSpan="2" colSpan="3" backgroundColor="white"
+            marginLeft="10" marginRight="10" textWrap="true" borderColor="black"
+            borderWidth="2" maxLength="200" />
+
+        <Label text="Points:" row="4" col="0" marginLeft="10" marginTop="10"
+            fontSize="16" />
+        <TextField text="{{ points }}" row="4" col="1" marginRight="10"
+            keyboardType="number" />
+
+        <Label text="Experience:" row="5" col="0" marginLeft="10" marginTop="10"
+            fontSize="16" />
+        <TextField text="{{ experience }}" row="5" col="1" marginRight="10"
+            keyboardType="number" />
+
+        <TimePicker row="4" col="3" rowSpan="2" hour="{{ currentHour }}"
+            minute="{{ currentMinute }}" verticalAlignment="center" />
+
+        <TextView editable="true" text="{{ rewards }}" hint="Rewards" row="6"
+            col="0" colSpan="3" backgroundColor="white" marginTop="10"
+            marginLeft="10" marginRight="10" marginBottom="10" textWrap="true"
+            borderColor="black" borderWidth="2" maxLength="200" />
+
+        <Button text="Submit" tap="{{ onButtonTap }}" row="7" col="1" backgroundColor="white" />
+
+    </GridLayout>
+</Page>
