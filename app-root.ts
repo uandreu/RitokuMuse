@@ -53,3 +53,13 @@ export function navigateToCreate(args: EventData) {
     });
     sideDrawer.closeDrawer();
 }
+
+export function navigateToCurrent(args: EventData) {
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
+    const featuredFrame = getFrameById("root");
+    featuredFrame.navigate({
+        moduleName: "quest-page",
+        clearHistory: true
+    });
+    sideDrawer.closeDrawer();
+}

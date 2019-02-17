@@ -1,11 +1,12 @@
 <nsDrawer:RadSideDrawer xmlns:nsDrawer="nativescript-ui-sidedrawer">
     <nsDrawer:RadSideDrawer.drawerContent>
         <StackLayout backgroundColor="gray">
-            <Button text="Featured" tap="navigateToFeatured" />
+            <Button text="Friends" tap="navigateToFeatured" />
             <Button text="Browse" tap="navigateToBrowse" />
-            <Button text="Search" tap="navigateToSearch" />
-            <Button text="Home" tap="navigateToHome" />
-            <Button text="Create" tap="navigateToCreate" />
+            <Button text="Settings" tap="navigateToSearch" />
+            <Button text="Profile" tap="navigateToHome" />
+            <Button text="Create Quest" tap="navigateToCreate" />
+            <Button text="Current Quest" tap="navigateToCurrent" />
         </StackLayout>
     </nsDrawer:RadSideDrawer.drawerContent>
 
