@@ -1,0 +1,52 @@
+<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
+
+    <ActionBar class="action-bar" backgroundColor="White">
+        <Label text="Quests" height="28" backgroundColor="transparent"
+            fontSize="22" fontAttributes="Bold" />
+    </ActionBar>
+    <ScrollView>
+        <StackLayout class="home-panel" marginBottom="100">
+            <!--Add your page content here-->
+            <WrapLayout orientation="vertical" width="400" height="40"
+                backgroundColor="transparent" marginRight="1px">
+                <Image src="http://chittagongit.com//images/sword-icon-png/sword-icon-png-28.jpg"
+                    width="80px" height="80px" />
+                <Label text=" Unfinished Quest" width="200" height="70"
+                    backgroundColor="transparent" />
+
+            </WrapLayout>
+
+
+            <ListView class="list-group" items="{{ countries }}" itemTap="{{ onItemTap }}"
+                style="height:878px" backgroundColor="LightGray">
+                <ListView.itemTemplate>
+                    <FlexboxLayout flexDirection="row" class="list-group-item">
+                        <Image src="{{ imageSrc }}" class="thumb img-circle"
+                            width="40" height="40" />
+                        <StackLayout orientation="vertical" width="180"
+                            height="1" backgroundColor="transparent">
+                            <Label text="{{ name }}" class="list-group-item-heading"
+                                width="500" height="20" />
+                            <Label text="{{ reward }}" class="list-group-item-heading"
+                                width="500" height="30" />
+                        </StackLayout>
+                        <StackLayout orientation="vertical" width="80" height="1"
+                            backgroundColor="transparent">
+                            <Label text="{{ exp }}" class="list-group-item-heading"
+                                width="70" height="20" backgroundColor="transparent" />
+                            <Label text="{{ pts }}" class="list-group-item-heading"
+                                width="70" height="20" backgroundColor="transparent" />
+                        </StackLayout>
+                    </FlexboxLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            <TextView editable="false" style="height:160px" backgroundColor="SkyBlue"
+                flexDirection="row" marginTop="20">
+                <FormattedString>
+                    <Span text=" LVL 01          Current Exp: 100/1000"
+                        color="White" fontAttributes="Bold" />
+                </FormattedString>
+            </TextView>
+        </StackLayout>
+    </ScrollView>
+</Page>
