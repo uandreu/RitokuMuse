@@ -4,6 +4,15 @@ var dialogs = require("tns-core-modules/ui/dialogs");
 
 function HomeViewModel() {
   var viewModel = observableModule.fromObject({
+    onOpenDrawerTap: function () {
+        var sideDrawer = frame.topmost().getViewById("sideDrawer");
+        sideDrawer.showDrawer();
+    },
+    onCloseDrawerTap: function () {
+        var sideDrawer = frame.topmost().getViewById("sideDrawer");
+        sideDrawer.closeDrawer();
+    },
+
     expandRewards: function () {
       dialogs.alert({
         title: "Rewards",
