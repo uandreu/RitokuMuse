@@ -1,0 +1,15 @@
+<nsDrawer:RadSideDrawer xmlns:nsDrawer="nativescript-ui-sidedrawer">
+    <nsDrawer:RadSideDrawer.drawerContent>
+        <StackLayout backgroundColor="gray">
+            <Button text="Featured" tap="navigateToFeatured" />
+            <Button text="Browse" tap="navigateToBrowse" />
+            <Button text="Search" tap="navigateToSearch" />
+            <Button text="Home" tap="navigateToHome" />
+            <Button text="Create" tap="navigateToCreate" />
+        </StackLayout>
+    </nsDrawer:RadSideDrawer.drawerContent>
+
+    <nsDrawer:RadSideDrawer.mainContent>
+        <Frame id="root" defaultPage="featured-page" />
+    </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>

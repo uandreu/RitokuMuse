@@ -10,7 +10,7 @@ JavaScript modules. The CommonJS require() function is how you import
 JavaScript modules defined in other files.
 */
 var frameModule = require("tns-core-modules/ui/frame");
-var HomeViewModel = require("./home-view-model");
+var HomeViewModel = require("./create-view-model");
 
 var homeViewModel = new HomeViewModel();
 

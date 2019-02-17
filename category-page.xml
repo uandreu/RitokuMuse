@@ -1,0 +1,7 @@
+<Page class="page">
+    <ActionBar title="Category" class="action-bar"></ActionBar>
+
+    <StackLayout>
+        <Button text="navigate('item-page')" tap="navigateToItem" />
+    </StackLayout>
+</Page>

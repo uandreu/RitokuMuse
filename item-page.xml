@@ -1,0 +1,7 @@
+<Page class="page">
+    <ActionBar title="Item" class="action-bar"></ActionBar>
+
+    <StackLayout>
+        <Button text="goBack()" tap="goBack" />
+    </StackLayout>
+</Page>

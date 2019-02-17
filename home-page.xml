@@ -1,80 +1,50 @@
 <Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
 
-    <ActionBar title="Profile" class="action-bar">
-        <NavigationButton android.systemIcon="ic_menu_more" tap="{{ onOpenDrawerTap }}"
-            margin="10" style="horizontal-align: left" />
+    <ActionBar class="action-bar">
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="{{ onOpenDrawerTap }}"></NavigationButton>
+        <ActionItem icon="res://navigation/menu" android:visibility="collapsed"
+            tap="{{ onOpenDrawerTap }}" ios.position="left">
+        </ActionItem>
+        <Label class="action-bar-title" text="Profile"></Label>
     </ActionBar>
 
-    <GridLayout rows="*" columns="*" width="auto" height="auto" xmlns:nsDrawer="nativescript-ui-sidedrawer">
-        <nsDrawer:RadSideDrawer id="sideDrawer" rows="0">
-            <nsDrawer:RadSideDrawer.drawerContent>
-                <StackLayout backgroundColor="gray">
-                    <StackLayout height="56" style="text-align: center; vertical-align: center;">
-                        <Label text="Navigation Menu" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Label text="Primary" padding="10" backgroundColor="lightgray" />
-                        <Label text="Social" padding="10" />
-                        <Label text="Promotions" padding="10" />
-                        <Label text="Labels" padding="10" backgroundColor="lightgray" />
-                        <Label text="Important" padding="10" />
-                        <Label text="Starred" padding="10" />
-                        <Label text="Sent Mail" padding="10" />
-                        <Label text="Drafts" padding="10" />
-                    </StackLayout>
-                    <Label text="Close" color="lightgray" padding="10" style="horizontal-align: center"
-                        tap="{{ onCloseDrawerTap }}" />
-                </StackLayout>
-            </nsDrawer:RadSideDrawer.drawerContent>
-            <nsDrawer:RadSideDrawer.mainContent>
-                <GridLayout margin="5" marginTop="20" columns="150, 250" rows="80, 100, 90, 80, 300"
-                    width="400" height="600">
-                    <Label text="{{ name }}" row="0" col="0" textWrap="true"
-                        fontSize="40" textAlignment="center" />
-                    <GridLayout columns="180, 70" rows="80" width="250"
-                        height="80" row="0" col="1" marginTop="30"
-                        marginRight="30">
-                        <Label text="{{ tokens }}" row="0" col="0" fontSize="20"
-                            textAlignment="right" />
-                        <Label text="tokens" row="0" col="1" fontSize="20"
-                            textAlignment="center" />
-                    </GridLayout>
-                    <Image src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"
-                        width="100" height="100" row="1" col="0"
-                        horizontalAlignment="left" marginLeft="30" />
-                    <GridLayout columns="70, 180" rows="50, 50" width="250"
-                        height="100" row="1" col="1" marginRight="30">
-                        <Label text="LV " row="0" col="0" fontSize="40"
-                            textAlignment="right" />
-                        <Label text="{{ level }}" row="0" col="1" fontSize="40"
-                            textAlignment="left" tap="{{ expandXP }}" />
+    <GridLayout margin="5" marginTop="20" columns="150, 250" rows="80, 100, 90, 80, 300"
+        width="400" height="600">
+        <Label text="{{ name }}" row="0" col="0" textWrap="true" fontSize="40"
+            textAlignment="center" />
+        <GridLayout columns="180, 70" rows="80" width="250" height="80" row="0"
+            col="1" marginTop="30" marginRight="30">
+            <Label text="{{ tokens }}" row="0" col="0" fontSize="20"
+                textAlignment="right" />
+            <Label text="tokens" row="0" col="1" fontSize="20" textAlignment="center" />
+        </GridLayout>
+        <Image src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"
+            width="100" height="100" row="1" col="0" horizontalAlignment="left"
+            marginLeft="30" />
+        <GridLayout columns="70, 180" rows="50, 50" width="250" height="100"
+            row="1" col="1" marginRight="30">
+            <Label text="LV " row="0" col="0" fontSize="40" textAlignment="right" />
+            <Label text="{{ level }}" row="0" col="1" fontSize="40"
+                textAlignment="left" tap="{{ expandXP }}" />
 
-                        <Progress value="{{ exp }}" maxValue="100" colSpan="2"
-                            row="1" col="0" marginLeft="20" marginRight="10"
-                            tap="{{ expandXP }}" />
-                    </GridLayout>
-                    <Label text="Upcoming" row="3" col="0" colSpan="2"
-                        fontSize="40" textAlignment="center" />
-                    <GridLayout columns="200, 200" rows="100, 75, 125" width="400"
-                        height="300" row="4" col="0" colSpan="2"
-                        backgroundColor="lightgray">
-                        <Label text="{{ qname }}" row="0" col="0" fontSize="40"
-                            textAlignment="center" />
-                        <Label text="{{ qexp }}" row="0" col="1" fontSize="40"
-                            textAlignment="center" />
-                        <Label text="{{ qtokens }}" row="1" col="1" fontSize="20"
-                            textAlignment="center" />
-                        <Label text="{{ qrew }}" row="1" col="0" fontSize="20"
-                            textAlignment="center" tap="{{ expandRewards }}" />
-                        <Label text="{{ qdesc }}" row=" 2"
-                            col="0" colSpan="2" fontSize="20" textAlignment="center"
-                            textWrap="true" />
-                    </GridLayout>
-                </GridLayout>
-            </nsDrawer:RadSideDrawer.mainContent>
-        </nsDrawer:RadSideDrawer>
+            <Progress value="{{ exp }}" maxValue="100" colSpan="2" row="1"
+                col="0" marginLeft="20" marginRight="10" tap="{{ expandXP }}" />
+        </GridLayout>
+        <Label text="Upcoming" row="3" col="0" colSpan="2" fontSize="40"
+            textAlignment="center" />
+        <GridLayout columns="200, 200" rows="100, 75, 125" width="400" height="300"
+            row="4" col="0" colSpan="2" backgroundColor="lightgray">
+            <Label text="{{ qname }}" row="0" col="0" fontSize="40"
+                textAlignment="center" />
+            <Label text="{{ qexp }}" row="0" col="1" fontSize="40"
+                textAlignment="center" />
+            <Label text="{{ qtokens }}" row="1" col="1" fontSize="20"
+                textAlignment="center" />
+            <Label text="{{ qrew }}" row="1" col="0" fontSize="20"
+                textAlignment="center" tap="{{ expandRewards }}" />
+            <Label text="{{ qdesc }}" row=" 2" col="0" colSpan="2" fontSize="20"
+                textAlignment="center" textWrap="true" />
+        </GridLayout>
     </GridLayout>
-
-
 
 </Page>
